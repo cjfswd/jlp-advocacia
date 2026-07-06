@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JLP Assessoria Jurídica | Dr. Jocelino Lopes Pereira</title>
+<meta name="description" content="JLP Assessoria Jurídica: Direito Empresarial, Trabalhista e Cível. Sua empresa preparada para a Reforma Tributária 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bordo-950:#2a0a0d;
+    --bordo-900:#3d0f14;
+    --bordo-800:#4f151b;
+    --bordo-700:#661c23;
+    --gold-400:#e6c877;
+    --gold-500:#d4af37;
+    --gold-600:#b8863b;
+    --gold-ink:#7a5620;
+    --cream:#f8f2e9;
+    --cream-dark:#efe4d2;
+    --ink:#201412;
+    --ink-soft:#4a3a37;
+    --surface:#ffffff;
+    --shadow: 0 20px 50px -20px rgba(42,10,13,.4);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.3px;text-wrap:balance;}
+  p{text-wrap:pretty;}
+  a{text-decoration:none;color:inherit;}
+  :focus-visible{outline:2px solid var(--gold-400);outline-offset:2px;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .icon{display:block;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.75rem;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold-600);font-weight:600;margin-bottom:14px;
+  }
+  .eyebrow::before, .eyebrow::after{content:"";width:24px;height:1px;background:currentColor;}
+  .eyebrow.center{justify-content:center;width:100%;}
+  .reforma .eyebrow{color:var(--gold-ink);}
+  section{position:relative;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 34px;border-radius:2px;font-weight:600;font-size:1rem;
+    letter-spacing:.5px;transition:transform .25s ease, box-shadow .25s ease, background .25s ease;cursor:pointer;border:1px solid transparent;
+    white-space:nowrap;
+  }
+  .btn-gold{background:linear-gradient(135deg,var(--gold-400),var(--gold-600));color:var(--bordo-950);box-shadow:0 12px 28px -10px rgba(184,134,59,.55);}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 34px -10px rgba(184,134,59,.7);}
+  .btn-outline{border-color:rgba(230,200,119,.55);color:var(--gold-400);}
+  .btn-outline:hover{background:rgba(230,200,119,.1);}
+  .btn-outline-dark{border-color:var(--bordo-800);color:var(--bordo-900);}
+  .btn-outline-dark:hover{background:var(--bordo-900);color:var(--cream);}
+
+  /* HEADER */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(42,10,13,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(230,200,119,.15);
+  }
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:14px;color:var(--cream);}
+  .brand-mark{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:800;color:var(--gold-400);line-height:1;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-text b{font-size:.72rem;letter-spacing:2.5px;color:var(--cream);}
+  .brand-text span{font-size:.6rem;letter-spacing:2px;color:var(--gold-500);}
+  nav.links{display:flex;gap:28px;}
+  nav.links a{color:var(--cream);font-size:.85rem;letter-spacing:.4px;opacity:.85;position:relative;padding:4px 0;white-space:nowrap;}
+  nav.links a:hover{opacity:1;color:var(--gold-400);}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  .nav-whatsapp{
+    display:none;align-items:center;justify-content:center;
+    width:44px;height:44px;border-radius:50%;flex:none;
+    background:linear-gradient(135deg,var(--gold-400),var(--gold-600));color:var(--bordo-950);
+  }
+  .nav-whatsapp .icon{width:21px;height:21px;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:14px 11px;margin:-14px -11px;}
+  .burger span{width:22px;height:2px;background:var(--gold-400);display:block;}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(230,200,119,.10), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(230,200,119,.08), transparent 40%),
+      linear-gradient(160deg,var(--bordo-950) 0%,var(--bordo-900) 55%,var(--bordo-800) 100%);
+    color:var(--cream);padding:160px 0 100px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .hero h1{font-size:3.1rem;line-height:1.15;color:var(--cream);margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--gold-400);}
+  .hero p.lead{font-size:1.08rem;color:rgba(248,242,233,.82);max-width:520px;margin-bottom:34px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+  .credential-line{
+    font-size:1rem;color:rgba(248,242,233,.78);max-width:520px;
+    padding-top:22px;border-top:1px solid rgba(230,200,119,.2);
+  }
+  .credential-line strong{color:var(--gold-400);font-weight:600;}
+
+  .hero-card{
+    background:rgba(255,255,255,.04);border:1px solid rgba(230,200,119,.25);
+    border-radius:6px;padding:38px 34px;backdrop-filter:blur(6px);
+    box-shadow:var(--shadow);position:relative;
+  }
+  .hero-card::before{
+    content:"";position:absolute;top:-9px;left:34px;width:16px;height:16px;
+    background:var(--bordo-900);border:1px solid rgba(230,200,119,.5);
+    border-radius:3px;transform:rotate(45deg);
+  }
+  .hero-card h2{color:var(--gold-400);font-size:1.3rem;margin-bottom:14px;}
+  .hero-card p{color:rgba(248,242,233,.85);font-size:1rem;margin-bottom:20px;}
+  .hero-card ul{list-style:none;margin-bottom:24px;}
+  .hero-card ul li{display:flex;align-items:flex-start;gap:10px;font-size:1rem;color:rgba(248,242,233,.85);margin-bottom:11px;}
+  .hero-card ul li .icon{width:18px;height:18px;color:var(--gold-400);margin-top:2px;flex:none;}
+
+  /* PILLARS */
+  .pillars{background:var(--cream);padding:100px 0;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 60px;}
+  .section-head h2{font-size:2.2rem;color:var(--bordo-900);margin-bottom:16px;}
+  .section-head p{color:var(--ink-soft);font-size:1rem;}
+  .pillar-strip{display:flex;border-top:1px solid var(--cream-dark);}
+  .pillar-item{flex:1;display:flex;gap:16px;align-items:flex-start;padding:36px 30px;border-right:1px solid var(--cream-dark);}
+  .pillar-item:last-child{border-right:none;}
+  .pillar-item .icon{width:28px;height:28px;color:var(--bordo-900);flex:none;margin-top:4px;}
+  .pillar-item h3{font-size:1.1rem;color:var(--bordo-900);margin-bottom:8px;}
+  .pillar-item p{font-size:1rem;color:var(--ink-soft);}
+
+  /* SOBRE */
+  .sobre{background:var(--cream-dark);padding:100px 0;}
+  .sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center;}
+  .sobre-frame{
+    width:100%;aspect-ratio:4/5;border-radius:8px;
+    background:linear-gradient(155deg,var(--bordo-900),var(--bordo-700));
+    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .sobre-frame::after{content:"";position:absolute;inset:14px;border:1px solid rgba(230,200,119,.35);border-radius:4px;}
+  .sobre-frame .initials{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,18vw,6.5rem);color:rgba(230,200,119,.9);font-weight:800;line-height:1;}
+  .sobre-frame .cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:var(--cream);font-size:clamp(.62rem,2.6vw,.72rem);letter-spacing:2px;text-transform:uppercase;padding:0 12px;}
+  .sobre h2{font-size:2.1rem;color:var(--bordo-900);margin-bottom:20px;}
+  .sobre p{color:var(--ink-soft);margin-bottom:16px;font-size:1rem;}
+  .sobre-badge{display:flex;gap:18px;margin-top:28px;flex-wrap:wrap;}
+  .sobre-badge span{
+    font-size:.78rem;font-weight:600;letter-spacing:.4px;color:var(--bordo-900);
+    background:var(--surface);border:1px solid var(--gold-500);padding:9px 16px;border-radius:30px;
+  }
+
+  /* AREAS */
+  .areas{background:var(--bordo-950);padding:100px 0;color:var(--cream);
+    background-image:radial-gradient(circle at 90% 10%, rgba(230,200,119,.08), transparent 40%);}
+  .areas .section-head h2{color:var(--cream);}
+  .areas .section-head p{color:rgba(248,242,233,.72);}
+  .area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .area-card{
+    background:rgba(255,255,255,.04);border:1px solid rgba(230,200,119,.2);
+    border-radius:8px;padding:36px 30px;transition:all .25s ease;
+  }
+  .area-card:hover{background:rgba(230,200,119,.08);border-color:var(--gold-500);transform:translateY(-4px);}
+  .area-card .icon-wrap{
+    width:52px;height:52px;border-radius:10px;margin-bottom:18px;
+    background:rgba(230,200,119,.12);border:1px solid rgba(230,200,119,.35);
+    display:flex;align-items:center;justify-content:center;color:var(--gold-400);
+  }
+  .area-card .icon-wrap .icon{width:24px;height:24px;}
+  .area-card h3{font-size:1.25rem;color:var(--cream);margin-bottom:14px;}
+  .area-card p{font-size:1rem;color:rgba(248,242,233,.72);margin-bottom:18px;}
+  .area-card ul{list-style:none;}
+  .area-card ul li{font-size:1rem;color:rgba(248,242,233,.65);padding:6px 0;border-top:1px solid rgba(230,200,119,.12);}
+  .area-card ul li:first-child{border-top:none;}
+
+  /* REFORMA TRIBUTARIA */
+  .reforma{
+    padding:110px 0;
+    background:linear-gradient(160deg,#fff, var(--cream) 60%);
+    position:relative;
+  }
+  .reforma-panel{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    border-radius:14px;overflow:hidden;box-shadow:var(--shadow);
+  }
+  .reforma-side{
+    background:linear-gradient(160deg,var(--bordo-900),var(--bordo-950));
+    color:var(--cream);padding:56px 48px;position:relative;
+  }
+  .reforma-side .tag{
+    display:inline-block;background:rgba(230,200,119,.15);border:1px solid var(--gold-500);
+    color:var(--gold-400);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;
+    padding:6px 14px;border-radius:30px;margin-bottom:22px;
+  }
+  .reforma-side h2{font-size:2rem;color:var(--cream);margin-bottom:18px;}
+  .reforma-side h2 em{font-style:normal;color:var(--gold-400);}
+  .reforma-side p{color:rgba(248,242,233,.82);font-size:1rem;margin-bottom:26px;}
+  .countdown-box{
+    display:flex;gap:14px;margin-bottom:30px;
+  }
+  .countdown-box div{
+    background:rgba(255,255,255,.06);border:1px solid rgba(230,200,119,.25);
+    border-radius:6px;padding:14px 18px;text-align:center;flex:1;
+  }
+  .countdown-box div b{display:block;font-family:'Playfair Display',serif;color:var(--gold-400);font-size:1.5rem;}
+  .countdown-box div span{font-size:.65rem;letter-spacing:1px;color:rgba(248,242,233,.7);}
+  .reforma-content{background:var(--surface);padding:56px 48px;}
+  .reforma-content h3{font-size:1.15rem;color:var(--bordo-900);margin-bottom:22px;}
+  .reforma-list{list-style:none;margin-bottom:30px;}
+  .reforma-list li{
+    display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--cream-dark);
+  }
+  .reforma-list li:last-child{border-bottom:none;}
+  .reforma-list .ico{
+    width:36px;height:36px;flex:none;border-radius:50%;
+    background:linear-gradient(135deg,var(--gold-400),var(--gold-600));
+    display:flex;align-items:center;justify-content:center;color:var(--bordo-950);
+  }
+  .reforma-list .ico .icon{width:18px;height:18px;}
+  .reforma-list h4{font-size:1.02rem;color:var(--bordo-900);margin-bottom:4px;}
+  .reforma-list p{font-size:1rem;color:var(--ink-soft);}
+
+  /* ESCRITORIOS */
+  .escritorios{background:var(--cream-dark);padding:100px 0;}
+  .office-list{display:flex;flex-direction:column;border-top:1px solid var(--gold-500);}
+  .office-row{display:flex;gap:24px;padding:32px 4px;border-bottom:1px solid rgba(74,58,55,.15);align-items:flex-start;}
+  .office-row:last-child{border-bottom:none;}
+  .office-row-icon{
+    width:48px;height:48px;border-radius:50%;flex:none;
+    background:var(--surface);border:1px solid var(--gold-500);
+    display:flex;align-items:center;justify-content:center;color:var(--gold-ink);
+  }
+  .office-row-icon .icon{width:22px;height:22px;}
+  .office-row .badge{
+    font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold-ink);
+    font-weight:700;margin-bottom:6px;display:block;
+  }
+  .office-row h3{font-size:1.15rem;color:var(--bordo-900);margin-bottom:10px;}
+  .office-row p{font-size:1rem;color:var(--ink-soft);margin-bottom:4px;}
+
+  /* CONTATO / CTA */
+  .contato{
+    background:linear-gradient(160deg,var(--bordo-950),var(--bordo-800));
+    color:var(--cream);padding:100px 0;
+  }
+  .contato-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .contato h2{font-size:2.1rem;color:var(--cream);margin-bottom:18px;}
+  .contato p.lead{color:rgba(248,242,233,.8);margin-bottom:32px;max-width:480px;}
+  .contact-list{list-style:none;}
+  .contact-list li{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(230,200,119,.15);align-items:flex-start;}
+  .contact-list .ico{color:var(--gold-400);flex:none;width:26px;padding-top:2px;}
+  .contact-list .ico .icon{width:22px;height:22px;}
+  .contact-list b{display:block;font-size:1.05rem;color:var(--cream);}
+  .contact-list span{font-size:1rem;color:rgba(248,242,233,.7);}
+  .contact-card{
+    background:rgba(255,255,255,.05);border:1px solid rgba(230,200,119,.3);
+    border-radius:10px;padding:40px 34px;text-align:center;
+  }
+  .contact-card .brand-mark{font-size:2.6rem;margin-bottom:6px;}
+  .contact-card h3{color:var(--cream);font-size:1.3rem;margin-bottom:10px;}
+  .contact-card p{color:rgba(248,242,233,.78);font-size:1rem;margin-bottom:26px;}
+
+  footer{background:var(--bordo-950);color:rgba(248,242,233,.6);padding:34px 0;border-top:1px solid rgba(230,200,119,.15);}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:.8rem;}
+  .footer-row a{color:var(--gold-400);}
+
+  .whatsapp-float{
+    position:fixed;bottom:26px;right:26px;z-index:90;
+    width:60px;height:60px;border-radius:50%;
+    background:linear-gradient(135deg,#25D366,#1ebe57);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 30px -10px rgba(0,0,0,.4);
+  }
+  .whatsapp-float::after{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    background:rgba(37,211,102,.55);
+    animation:pulse-ring 2.4s ease-out infinite;
+  }
+  .whatsapp-float .icon{width:28px;height:28px;color:#fff;position:relative;z-index:1;}
+  @keyframes pulse-ring{
+    0%{transform:scale(1);opacity:.55;}
+    70%{transform:scale(1.55);opacity:0;}
+    100%{transform:scale(1.55);opacity:0;}
+  }
+
+  .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
+    .whatsapp-float::after{animation:none;opacity:0;}
+    .pillar-item, .area-card{transition:none;}
+  }
+
+  /* TABLET NAV — links stay, but swap the wide CTA button for the compact
+     WhatsApp icon so brand + links + CTA never get cramped below max-width */
+  @media(max-width:1180px){
+    .nav-cta .btn{display:none;}
+    .nav-whatsapp{display:flex;}
+    nav.links{gap:24px;}
+  }
+
+  /* MOBILE NAV — collapse links into the burger overlay */
+  @media(max-width:900px){
+    nav.links{display:none;}
+    nav.links.open{
+      display:flex;flex-direction:column;gap:2px;
+      position:fixed;top:var(--header-h,69px);left:0;right:0;
+      height:calc(100vh - var(--header-h,69px));height:calc(100dvh - var(--header-h,69px));
+      background:var(--bordo-950);padding:12px 24px;
+      border-top:1px solid rgba(230,200,119,.15);
+      overflow-y:auto;z-index:99;
+    }
+    nav.links.open a{padding:16px 4px;border-bottom:1px solid rgba(230,200,119,.1);font-size:1rem;white-space:normal;}
+    .burger{display:flex;}
+    .nav-cta{gap:8px;}
+  }
+
+  /* TABLET / MOBILE LAYOUT */
+  @media(max-width:900px){
+    .hero-grid, .sobre-grid, .contato-grid{grid-template-columns:1fr;}
+    .area-grid{grid-template-columns:1fr;}
+    .pillar-strip{flex-direction:column;}
+    .pillar-item{border-right:none;border-bottom:1px solid var(--cream-dark);}
+    .pillar-item:last-child{border-bottom:none;}
+    .reforma-panel{grid-template-columns:1fr;}
+    .hero h1{font-size:2.2rem;}
+    .hero{padding-top:130px;}
+    .sobre-frame{max-width:280px;margin:0 auto;}
+  }
+
+  /* VERY SMALL PHONES — keep brand + burger inside a 320px viewport */
+  @media(max-width:380px){
+    .brand{gap:9px;}
+    .brand-mark{font-size:1.6rem;}
+    .brand-text b{letter-spacing:1.5px;}
+    .brand-text span{letter-spacing:.5px;}
+    .nav-cta{gap:4px;}
+  }
+
+  /* SMALL MOBILE */
+  @media(max-width:640px){
+    .hero{min-height:auto;padding-top:112px;padding-bottom:56px;}
+    .hero h1{font-size:1.85rem;}
+    .hero p.lead{font-size:1rem;}
+    .hero-actions{flex-direction:column;align-items:stretch;margin-bottom:36px;}
+    .hero-actions .btn{width:100%;}
+    .hero-stats{gap:22px;}
+    .hero-stats div b{font-size:1.5rem;}
+    .hero-card{padding:28px 22px;}
+
+    .pillars, .sobre, .areas, .escritorios, .contato{padding:64px 0;}
+    .reforma{padding:64px 0;}
+    .section-head{margin-bottom:40px;}
+    .section-head h2{font-size:1.55rem;}
+
+    .reforma-side, .reforma-content{padding:32px 24px;}
+    .countdown-box{flex-wrap:wrap;}
+    .countdown-box div{min-width:calc(50% - 7px);}
+
+    .contact-card{padding:30px 24px;}
+    .footer-row{flex-direction:column;text-align:center;gap:10px;}
+
+    .whatsapp-float{width:52px;height:52px;bottom:16px;right:16px;}
+    .whatsapp-float .icon{width:24px;height:24px;}
+
+    .btn{padding:14px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="6"/>
+      <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/>
+    </symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/>
+      <path d="m9 12 2 2 4-4"/>
+    </symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="22" x2="21" y2="22"/>
+      <line x1="6" y1="18" x2="6" y2="11"/>
+      <line x1="10" y1="18" x2="10" y2="11"/>
+      <line x1="14" y1="18" x2="14" y2="11"/>
+      <line x1="18" y1="18" x2="18" y2="11"/>
+      <polygon points="12 2 21 8 3 8"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2"/>
+      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M17 3.13a4 4 0 0 1 0 7.75"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.85"/>
+    </symbol>
+    <symbol id="i-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="8" y1="13" x2="16" y2="13"/>
+      <line x1="8" y1="17" x2="13" y2="17"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </symbol>
+    <symbol id="i-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+      <polyline points="17 6 23 6 23 12"/>
+    </symbol>
+    <symbol id="i-refresh-cw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M23 4v6h-6"/>
+      <path d="M1 20v-6h6"/>
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/>
+      <path d="M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <polyline points="22 6 12 13 2 6"/>
+    </symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .16 5.34.16 11.88c0 2.1.55 4.14 1.6 5.94L0 24l6.34-1.66a11.86 11.86 0 0 0 5.69 1.45h.01c6.54 0 11.88-5.34 11.88-11.88 0-3.17-1.24-6.15-3.4-8.43ZM12.04 21.6h-.01a9.7 9.7 0 0 1-4.94-1.35l-.35-.21-3.68.96.98-3.59-.23-.37a9.68 9.68 0 0 1-1.49-5.16c0-5.35 4.36-9.71 9.72-9.71a9.66 9.66 0 0 1 6.87 2.85 9.63 9.63 0 0 1 2.85 6.86c0 5.36-4.36 9.72-9.72 9.72Zm5.33-7.28c-.29-.15-1.72-.85-1.99-.94-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.19 3.01c.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark">JLP</span>
+      <span class="brand-text"><b>JLP</b><span>ASSESSORIA JURÍDICA</span></span>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#sobre">Sobre</a>
+      <a href="#areas">Áreas de Atuação</a>
+      <a href="#reforma">Reforma Tributária</a>
+      <a href="#escritorios">Escritórios</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-gold" href="https://wa.me/5521997922330" target="_blank" rel="noopener">Fale com um especialista</a>
+      <a class="nav-whatsapp" href="https://wa.me/5521997922330" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg class="icon"><use href="#i-whatsapp"></use></svg></a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow">Assessoria Jurídica desde 2005</span>
+      <h1>Segurança jurídica e <em>estratégia</em> para o seu negócio</h1>
+      <p class="lead">A JLP Assessoria Jurídica une mais de duas décadas de experiência em Direito Empresarial, Trabalhista e Cível à frente de mudanças que exigem visão estratégica, como a Reforma Tributária que entra em vigor em 2026.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#reforma">Prepare sua empresa para 2026</a>
+        <a class="btn btn-outline" href="#contato">Agendar consulta</a>
+      </div>
+      <p class="credential-line">Mais de <strong>20 anos</strong> de atuação, <strong>3 escritórios</strong> no Rio de Janeiro, atuando em Direito Empresarial, Trabalhista e Cível.</p>
+    </div>
+    <div class="hero-card reveal in">
+      <h2>Diagnóstico Reforma Tributária</h2>
+      <p>O novo sistema de IBS, CBS e Imposto Seletivo muda a forma como sua empresa apura, precifica e planeja. Antecipe-se.</p>
+      <ul>
+        <li><svg class="icon"><use href="#i-check"></use></svg><span>Diagnóstico do impacto tributário no seu setor</span></li>
+        <li><svg class="icon"><use href="#i-check"></use></svg><span>Planejamento societário e fiscal para a transição</span></li>
+        <li><svg class="icon"><use href="#i-check"></use></svg><span>Revisão de contratos e precificação</span></li>
+        <li><svg class="icon"><use href="#i-check"></use></svg><span>Acompanhamento contínuo até 2033</span></li>
+      </ul>
+      <a class="btn btn-gold" style="width:100%" href="https://wa.me/5521997922330" target="_blank" rel="noopener">Falar com a JLP agora</a>
+    </div>
+  </div>
+</section>
+
+<section class="pillars" id="valores">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Por que a JLP</h2>
+      <p>Fundamentos que sustentam cada orientação jurídica que oferecemos.</p>
+    </div>
+    <div class="pillar-strip">
+      <div class="pillar-item reveal">
+        <svg class="icon"><use href="#i-award"></use></svg>
+        <div><h3>Excelência</h3><p>Atuação jurídica baseada em ética, estratégia e resultados consistentes.</p></div>
+      </div>
+      <div class="pillar-item reveal">
+        <svg class="icon"><use href="#i-shield-check"></use></svg>
+        <div><h3>Compromisso</h3><p>Soluções jurídicas personalizadas com foco em segurança e confiança.</p></div>
+      </div>
+      <div class="pillar-item reveal">
+        <svg class="icon"><use href="#i-landmark"></use></svg>
+        <div><h3>Solidez</h3><p>Fundamentos sólidos que sustentam relações duradouras e decisões seguras.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="container sobre-grid">
+    <div class="sobre-frame reveal">
+      <span class="initials">JLP</span>
+      <span class="cap">Dr. Jocelino Lopes Pereira</span>
+    </div>
+    <div class="reveal">
+      <h2>Tradição jurídica com olhar atual</h2>
+      <p>Sob a liderança do <strong>Dr. Jocelino Lopes Pereira</strong> (OAB/RJ 093.334), a JLP Assessoria Jurídica constrói há mais de 20 anos uma atuação pautada em seriedade, clareza e proximidade com o cliente, do escritório em Nova Iguaçu à atuação em todo o Rio de Janeiro.</p>
+      <p>Combinamos o rigor clássico da advocacia com uma leitura estratégica dos movimentos econômicos e regulatórios que impactam empresas, como a atual Reforma Tributária, para que nossos clientes decidam com confiança.</p>
+      <div class="sobre-badge">
+        <span>Direito Empresarial</span>
+        <span>Direito Trabalhista</span>
+        <span>Direito Cível</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="areas" id="areas">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow center">Áreas de atuação</span>
+      <h2>Especialização que cobre todo o ciclo do seu negócio</h2>
+      <p>Do dia a dia operacional às decisões estratégicas, atuamos onde sua empresa mais precisa.</p>
+    </div>
+    <div class="area-grid">
+      <div class="area-card reveal">
+        <div class="icon-wrap"><svg class="icon"><use href="#i-briefcase"></use></svg></div>
+        <h3>Direito Empresarial</h3>
+        <p>Estruturação societária, contratos, compliance e suporte jurídico contínuo para decisões de negócio.</p>
+        <ul>
+          <li>Constituição e reorganização societária</li>
+          <li>Contratos comerciais</li>
+          <li>Adequação à Reforma Tributária</li>
+        </ul>
+      </div>
+      <div class="area-card reveal">
+        <div class="icon-wrap"><svg class="icon"><use href="#i-users"></use></svg></div>
+        <h3>Direito Trabalhista</h3>
+        <p>Prevenção de passivos e defesa estratégica em todas as fases da relação de trabalho.</p>
+        <ul>
+          <li>Consultoria trabalhista preventiva</li>
+          <li>Defesa em ações e auditorias</li>
+          <li>Políticas internas e compliance</li>
+        </ul>
+      </div>
+      <div class="area-card reveal">
+        <div class="icon-wrap"><svg class="icon"><use href="#i-file-text"></use></svg></div>
+        <h3>Direito Cível</h3>
+        <p>Defesa de direitos e interesses em contratos, responsabilidade civil e questões patrimoniais.</p>
+        <ul>
+          <li>Contratos e obrigações</li>
+          <li>Responsabilidade civil</li>
+          <li>Questões patrimoniais e imobiliárias</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reforma" id="reforma">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow center">Reforma Tributária 2026</span>
+      <h2>Sua empresa pronta para o novo sistema tributário</h2>
+      <p>IBS, CBS e Imposto Seletivo redesenham a forma de tributar: quem se antecipa, decide melhor.</p>
+    </div>
+    <div class="reforma-panel reveal">
+      <div class="reforma-side">
+        <span class="tag">Transição 2026–2033</span>
+        <h2>O novo tributário <em>já começou</em></h2>
+        <p>A substituição de PIS, Cofins, IPI, ICMS e ISS pelo IBS e CBS altera precificação, fluxo de caixa e obrigações em praticamente todos os setores. Quanto antes o diagnóstico, menor o risco na transição.</p>
+        <div class="countdown-box">
+          <div><b>IBS</b><span>Imposto s/ Bens e Serviços</span></div>
+          <div><b>CBS</b><span>Contrib. s/ Bens e Serviços</span></div>
+          <div><b>IS</b><span>Imposto Seletivo</span></div>
+        </div>
+        <a class="btn btn-gold" href="https://wa.me/5521997922330" target="_blank" rel="noopener">Agendar diagnóstico tributário</a>
+      </div>
+      <div class="reforma-content">
+        <h3>Como a JLP conduz sua empresa na transição</h3>
+        <ul class="reforma-list">
+          <li>
+            <div class="ico"><svg class="icon"><use href="#i-search"></use></svg></div>
+            <div><h4>Diagnóstico setorial</h4><p>Mapeamento do impacto real da reforma no seu segmento (indústria, comércio, serviços ou agronegócio).</p></div>
+          </li>
+          <li>
+            <div class="ico"><svg class="icon"><use href="#i-trending-up"></use></svg></div>
+            <div><h4>Planejamento societário e fiscal</h4><p>Reorganização e reprecificação orientadas para reduzir carga e riscos tributários.</p></div>
+          </li>
+          <li>
+            <div class="ico"><svg class="icon"><use href="#i-file-text"></use></svg></div>
+            <div><h4>Adequação de contratos</h4><p>Revisão de cláusulas, preços e obrigações à luz das novas regras.</p></div>
+          </li>
+          <li>
+            <div class="ico"><svg class="icon"><use href="#i-refresh-cw"></use></svg></div>
+            <div><h4>Acompanhamento contínuo</h4><p>Suporte jurídico ao longo de toda a transição, até a consolidação em 2033.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="escritorios" id="escritorios">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Três escritórios para atender você</h2>
+    </div>
+    <div class="office-list">
+      <div class="office-row reveal">
+        <div class="office-row-icon"><svg class="icon"><use href="#i-map-pin"></use></svg></div>
+        <div>
+          <span class="badge">Sede</span>
+          <h3>Nova Iguaçu</h3>
+          <p>Condomínio Centro Comercial Amaral Peixoto</p>
+          <p>Rua Min. Edgar da Costa, 80, Salas 507, 509 e 511</p>
+          <p>Centro, Nova Iguaçu/RJ, CEP 26220-070</p>
+        </div>
+      </div>
+      <div class="office-row reveal">
+        <div class="office-row-icon"><svg class="icon"><use href="#i-map-pin"></use></svg></div>
+        <div>
+          <span class="badge">Rio de Janeiro</span>
+          <h3>Centro</h3>
+          <p>Condomínio do Edifício Presidente Wilson</p>
+          <p>Av. Franklin Roosevelt, 194, Sala 305</p>
+          <p>Centro, Rio de Janeiro/RJ, CEP 20021-120</p>
+        </div>
+      </div>
+      <div class="office-row reveal">
+        <div class="office-row-icon"><svg class="icon"><use href="#i-map-pin"></use></svg></div>
+        <div>
+          <span class="badge">Rio de Janeiro</span>
+          <h3>Barra da Tijuca</h3>
+          <p>Vision Office</p>
+          <p>Av. Embaixador Abelardo Bueno, 3.500, Sala 1.102</p>
+          <p>Barra da Tijuca, Rio de Janeiro/RJ, CEP 22775-040</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="container contato-grid">
+    <div class="reveal">
+      <span class="eyebrow">Fale conosco</span>
+      <h2>Vamos conversar sobre a sua empresa</h2>
+      <p class="lead">Atendimento personalizado para entender o momento do seu negócio e apontar o melhor caminho jurídico, inclusive diante da Reforma Tributária.</p>
+      <ul class="contact-list">
+        <li><span class="ico"><svg class="icon"><use href="#i-phone"></use></svg></span><div><b>(21) 3770-6022</b><span>Telefone fixo</span></div></li>
+        <li><span class="ico"><svg class="icon"><use href="#i-whatsapp"></use></svg></span><div><b>(21) 99792-2330 · (21) 99676-8710</b><span>WhatsApp / Celular</span></div></li>
+        <li><span class="ico"><svg class="icon"><use href="#i-mail"></use></svg></span><div><b>contato@jlpajuridica.com.br</b><span>E-mail</span></div></li>
+        <li><span class="ico"><svg class="icon"><use href="#i-map-pin"></use></svg></span><div><b>Nova Iguaçu · Rio Centro · Barra da Tijuca</b><span>Atendimento presencial e online</span></div></li>
+      </ul>
+    </div>
+    <div class="contact-card reveal">
+      <div class="brand-mark">JLP</div>
+      <h3>Assessoria Jurídica</h3>
+      <p>Fale agora mesmo com nossa equipe pelo WhatsApp e agende sua consulta.</p>
+      <a class="btn btn-gold" style="width:100%;margin-bottom:14px" href="https://wa.me/5521997922330" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn btn-outline" style="width:100%" href="mailto:contato@jlpajuridica.com.br">Enviar e-mail</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 JLP Assessoria Jurídica · Dr. Jocelino Lopes Pereira, OAB/RJ 093.334</span>
+    <span><a href="https://instagram.com/jlp.adv" target="_blank" rel="noopener">@jlp.adv</a> · <a href="https://wa.me/5521997922330" target="_blank" rel="noopener">WhatsApp</a></span>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/5521997922330" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg class="icon"><use href="#i-whatsapp"></use></svg>
+</a>
+
+<script>
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('navLinks');
+  const header = document.querySelector('header');
+
+  function syncHeaderH(){
+    document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  }
+  syncHeaderH();
+  window.addEventListener('resize', syncHeaderH);
+
+  function closeMenu(){
+    links.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+  burger.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
