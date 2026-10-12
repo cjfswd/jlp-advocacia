@@ -79,6 +79,24 @@ Fora do Firefox, o download da íntegra e de documentos pode falhar porque o sis
 
 Regra prática: se o PJe falhar em download, pop-up ou login inesperado em outro navegador, use o Firefox com o PJeOffice.
 
+## 4. PJeOffice nao le o token ("modo Windows")
+
+Sintoma: ao assinar, o PJeOffice Pro da erro de leitura do token. A propria mensagem sugere a saida: trocar a integracao de **Windows** para **PJeOffice**.
+
+1. Clique em OK nos avisos. Perto do relogio, na setinha `^`, ache o icone do **PJeOffice Pro**.
+2. Botao direito > configuracao de certificado/token (o nome varia por versao).
+3. Onde estiver **Windows**, mude para **PJeOffice**.
+4. Ele pede o driver (`.dll`) do token. Os mais comuns:
+   - Token SafeNet / eToken (Aladdin): `C:\Windows\System32\eTPKCS11.dll`
+   - Token GD / StarSign: `C:\Windows\System32\aetpkss1.dll`
+   - Watchdata: `C:\Windows\System32\WDPKCS.dll`
+5. Salve, tire e recoloque o token, feche e reabra o navegador e tente entrar com "Seu certificado digital".
+
+Se nao souber a marca, ela costuma estar escrita no token ou aparece em Iniciar como o programa do token (ex.: "SafeNet Authentication Client"). Se nao funcionar, confirme no programa do token que o certificado aparece e reinstale o driver pelo site do fabricante/AC.
+
+Enquanto isso, se a conta tiver senha cadastrada, da pra entrar no PDPJ por **CPF + senha** ou **gov.br** sem token; o token so e obrigatorio na hora de assinar/protocolar.
+
+
 ## Fontes do histórico do PJe
 
 - Oracle / java.com: fim do NPAPI, Firefox 52 ESR como última versão com suporte.
